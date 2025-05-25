@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public StudentDTO createStudent(StudentDTO dto) {
-		System.out.println("create successfully....");
+		System.out.println("create successfully.....");
 		Student saved = repository.save(toEntity(dto));
 		return toDTO(saved);
 	}
