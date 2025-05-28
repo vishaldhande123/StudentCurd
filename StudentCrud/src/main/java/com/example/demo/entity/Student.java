@@ -17,7 +17,12 @@ public class Student {
     private String course;
     private int age;
 	
-    public Student(Long id, String name, String course, int age) {
+    
+    public Student() {
+		super();
+	}
+
+	public Student(Long id, String name, String course, int age) {
 		super();
 		this.id = id;
 		this.name = name;
