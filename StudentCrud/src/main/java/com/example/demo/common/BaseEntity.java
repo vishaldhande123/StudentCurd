@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
+import lombok.Data;
+
 
 @MappedSuperclass
 public abstract class BaseEntity {

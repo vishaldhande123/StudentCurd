@@ -1,6 +1,9 @@
 package com.example.demo.controller;
 
+
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,10 +23,13 @@ import com.example.demo.common.MessageConstants;
 import com.example.demo.common.ResponseModel;
 import com.example.demo.dto.StudentDTO;
 import com.example.demo.service.StudentService;
+import com.example.demo.service.StudentServiceImpl;
 
 @RestController
 @RequestMapping("/api/students")
 public class StudentController {
+
+	private static final Logger logger = LoggerFactory.getLogger(StudentServiceImpl.class);
 
     @Autowired
     private StudentService studentService;
@@ -36,6 +42,7 @@ public class StudentController {
     ) {
         Pageable pageable = PageRequest.of(page, size);
         Page<StudentDTO> studentPage = studentService.getStudentsPaginated(pageable);
+        logger.info("Success....");
         return new ResponseModel(
                 MessageConstants.SUCCESS,
                 MessageConstants.SUCCESS_STATUS_CODE,
